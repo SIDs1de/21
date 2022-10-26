@@ -394,6 +394,171 @@ body {
   }
 }
 
+.delivery {
+  &__inner {
+    padding-top: 65px;
+    padding-bottom: 60px;
+  }
+  &__title {
+    margin-bottom: 42px;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+  &__item {
+    &:nth-child(1) {
+      .delivery__item-title {
+        &::before {
+          background: url("../images/icons/iсons-delivery-car.svg") center/contain no-repeat;
+        }
+      }
+    }
+    &:nth-child(2) {
+      .delivery__item-title {
+        &::before {
+          background: url("../images/icons/iсons-delivery-map.svg") center/contain no-repeat;
+        }
+      }
+    }
+    &:nth-child(3) {
+      .delivery__item-title {
+        &::before {
+          background: url("../images/icons/iсons-delivery-air.svg") center/contain no-repeat;
+        }
+      }
+    }
+  }
+  &__item + &__item {
+    margin-top: 50px;
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      height: 1px;
+      width: 100%;
+      background-color: #eee;
+      left: 0;
+      top: -25px;
+    }
+  }
+  &__item-title {
+    font-weight: 700;
+    @include adaptive-value('font-size', 22, 19, 1);
+    line-height: calc(26.4 / 22);
+    margin-bottom: 26px;
+    padding-left: 52px;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 37px;
+      height: 37px;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  &__text {
+    font-size: 15px;
+    line-height: calc(24 / 15);
+  }
+}
+
+
+.kontakty {
+  &__inner {
+    padding-top: 65px;
+    padding-bottom: 60px;
+  }
+  &__title {
+    margin-bottom: 42px;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+  &__item {
+    &:nth-child(1) {
+      .kontakty__item-title {
+        &::before {
+          background: url("../images/icons/iсons-contacts-phone.svg") center/contain no-repeat;
+        }
+      }
+    }
+    &:nth-child(2) {
+      .kontakty__item-title {
+        &::before {
+          background: url("../images/icons/iсons-contacts-map.svg") center/contain no-repeat;
+        }
+      }
+    }
+    &:nth-child(3) {
+      .kontakty__item-title {
+        &::before {
+          background: url("../images/icons/iсons-contacts-social.svg") center/contain no-repeat;
+        }
+      }
+    }
+  }
+  &__item + &__item {
+    margin-top: 50px;
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      height: 1px;
+      width: 100%;
+      background-color: #eee;
+      left: 0;
+      top: -25px;
+    }
+  }
+  &__item-title {
+    font-weight: 700;
+    @include adaptive-value('font-size', 22, 19, 1);
+    line-height: calc(26.4 / 22);
+    margin-bottom: 26px;
+    padding-left: 52px;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 37px;
+      height: 37px;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  &__text {
+    font-size: 15px;
+    line-height: calc(24 / 15);
+    a {
+      color: #006ddd;
+      position: relative;
+      transition: color .2s;
+      &::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 1px;
+        height: 1px;
+        width: 100%;
+        background-color: #006ddd;
+        transition: width .2s;
+      }
+      &:hover {
+        color: darken(#006ddd, 20%);
+        &::before {
+          width: 0;
+        }
+      }
+    }
+  }
+}
+
 *::-webkit-scrollbar {
   width: 14px; /* ширина scrollbar */
 }

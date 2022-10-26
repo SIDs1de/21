@@ -846,6 +846,168 @@ body {
   background-color: #777;
 }
 
+.delivery__inner {
+  padding-top: 65px;
+  padding-bottom: 60px;
+}
+.delivery__title {
+  margin-bottom: 42px;
+}
+.delivery__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.delivery__item:nth-child(1) .delivery__item-title::before {
+  background: url("../images/icons/iсons-delivery-car.svg") center/contain no-repeat;
+}
+.delivery__item:nth-child(2) .delivery__item-title::before {
+  background: url("../images/icons/iсons-delivery-map.svg") center/contain no-repeat;
+}
+.delivery__item:nth-child(3) .delivery__item-title::before {
+  background: url("../images/icons/iсons-delivery-air.svg") center/contain no-repeat;
+}
+.delivery__item + .delivery__item {
+  margin-top: 50px;
+  position: relative;
+}
+.delivery__item + .delivery__item::before {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  background-color: #eee;
+  left: 0;
+  top: -25px;
+}
+.delivery__item-title {
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.2;
+  margin-bottom: 26px;
+  padding-left: 52px;
+  position: relative;
+}
+@media (max-width: 1200px) {
+  .delivery__item-title {
+    font-size: calc(19px + 3 * ((100vw - 320px) / 880));
+  }
+}
+.delivery__item-title::before {
+  content: "";
+  position: absolute;
+  width: 37px;
+  height: 37px;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.delivery__text {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.kontakty__inner {
+  padding-top: 65px;
+  padding-bottom: 60px;
+}
+.kontakty__title {
+  margin-bottom: 42px;
+}
+.kontakty__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.kontakty__item:nth-child(1) .kontakty__item-title::before {
+  background: url("../images/icons/iсons-contacts-phone.svg") center/contain no-repeat;
+}
+.kontakty__item:nth-child(2) .kontakty__item-title::before {
+  background: url("../images/icons/iсons-contacts-map.svg") center/contain no-repeat;
+}
+.kontakty__item:nth-child(3) .kontakty__item-title::before {
+  background: url("../images/icons/iсons-contacts-social.svg") center/contain no-repeat;
+}
+.kontakty__item + .kontakty__item {
+  margin-top: 50px;
+  position: relative;
+}
+.kontakty__item + .kontakty__item::before {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  background-color: #eee;
+  left: 0;
+  top: -25px;
+}
+.kontakty__item-title {
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.2;
+  margin-bottom: 26px;
+  padding-left: 52px;
+  position: relative;
+}
+@media (max-width: 1200px) {
+  .kontakty__item-title {
+    font-size: calc(19px + 3 * ((100vw - 320px) / 880));
+  }
+}
+.kontakty__item-title::before {
+  content: "";
+  position: absolute;
+  width: 37px;
+  height: 37px;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.kontakty__text {
+  font-size: 15px;
+  line-height: 1.6;
+}
+.kontakty__text a {
+  color: #006ddd;
+  position: relative;
+  -webkit-transition: color 0.2s;
+  -o-transition: color 0.2s;
+  transition: color 0.2s;
+}
+.kontakty__text a::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: 1px;
+  height: 1px;
+  width: 100%;
+  background-color: #006ddd;
+  -webkit-transition: width 0.2s;
+  -o-transition: width 0.2s;
+  transition: width 0.2s;
+}
+.kontakty__text a:hover {
+  color: #003b77;
+}
+.kontakty__text a:hover::before {
+  width: 0;
+}
+
 *::-webkit-scrollbar {
   width: 14px; /* ширина scrollbar */
 }
@@ -1073,4 +1235,41 @@ body {
     margin-bottom: 16px;
   }
 }
-/*# sourceMappingURL=main.css.map */
+@media (max-width: 700px) {
+  .delivery__title,
+.kontakty__title {
+    text-align: center;
+    margin-bottom: 22px;
+  }
+  .delivery__catalog,
+.kontakty__catalog {
+    text-align: center;
+  }
+  .delivery__catalog-link,
+.kontakty__catalog-link {
+    margin-bottom: 42px;
+    padding: 14px 20px 14px 35px;
+    border: 2px solid #ffd24e;
+    border-radius: 30px;
+    position: relative;
+  }
+  .delivery__catalog-link::before,
+.kontakty__catalog-link::before {
+    content: "";
+    position: absolute;
+    width: 7px;
+    height: 13px;
+    left: 18px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+    background: url("../images/icons/arrow-left-little.svg") center/contain no-repeat;
+  }
+}
+@media (min-width: 700px) {
+  .delivery__catalog-link,
+.kontakty__catalog-link {
+    display: none;
+  }
+}

@@ -49,7 +49,6 @@ function scripts() {
 function styles() {
   return src('src/scss/main.scss')
     .pipe(sourcemaps.init())
-    .pipe(concat('main.css'))
     .pipe(scss({}).on('error', scss.logError))
     .pipe(
       autoprefixer({
@@ -57,7 +56,6 @@ function styles() {
         grid: true,
       })
     )
-    .pipe(sourcemaps.write('.'))
     .pipe(dest('src/css'))
     .pipe(browserSync.stream());
 }
@@ -102,10 +100,4 @@ exports.scripts = scripts;
 exports.cleanPublic = cleanPublic;
 
 exports.build = series(cleanPublic, build);
-exports.default = parallel(
-  html,
-  styles,
-  scripts,
-  browsersync,
-  watching
-);
+exports.default = parallel(html, styles, scripts, browsersync, watching);
