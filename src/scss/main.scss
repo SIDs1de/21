@@ -81,6 +81,9 @@ body {
     align-items: center;
     position: relative;
     z-index: 100;
+    &::before {
+      display: none;
+    }
   }
   &__logo {
     margin-right: 12px;
@@ -138,8 +141,14 @@ body {
     }
   }
   &__whatsapp-link {
+    span {
+      display: none;
+    }
   }
   &__telegram-link {
+    span {
+      display: none;
+    }
   }
   &__links-wrapper {
     display: flex;
