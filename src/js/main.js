@@ -98,12 +98,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const burgerBtn = document.querySelector('.header__burger');
     const html = document.querySelector('html');
     const headerMenu = document.querySelector('.header__menu');
+    const headerLogoWrapper = document.querySelector('.header__logo-wrapper');
+    const headerBurger = document.querySelector('.header__burger');
 
     burgerBtn.addEventListener('click', () => {
+      html.scrollTo({ top: 0 });
       html.classList.toggle('lock');
       headerMenu.classList.toggle('active');
+      headerBurger.style.transform = 'translateY(0)';
+      headerLogoWrapper.style.transform = 'translateY(0)';
+    });
+  };
+
+  const menuScroll = () => {
+    const headerMenu = document.querySelector('.header__menu');
+    const headerLogoWrapper = document.querySelector('.header__logo-wrapper');
+    const headerBurger = document.querySelector('.header__burger');
+    headerMenu.addEventListener('scroll', (e) => {
+      headerLogoWrapper.style.transform = `translateY(-${headerMenu.scrollTop}px)`;
+      headerBurger.style.transform = `translateY(-${headerMenu.scrollTop}px)`;
     });
   };
 
   burger();
+  menuScroll();
 });
