@@ -50,7 +50,7 @@
       &::after {
         bottom: -27px;
         background-color: #fff;
-        width: 320px;
+        width: 300px;
         left: 50%;
         transform: translateX(-50%);
       }
@@ -151,6 +151,10 @@
         height: 18px;
         background: url("../images/icons/iсons-tovar-telegram.svg") center/contain no-repeat;
       }
+    }
+
+    &__vk {
+      margin-bottom: 70px;
     }
 
     &__vk-link {

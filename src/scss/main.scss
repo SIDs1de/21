@@ -402,4 +402,8 @@ body {
   border: 2px solid #fff; /* padding вокруг плашки */
 }
 
+.header__menu::-webkit-scrollbar {
+  width: 10px; /* ширина scrollbar */
+}
+
 @import "media";
