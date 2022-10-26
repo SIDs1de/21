@@ -31,22 +31,6 @@ function cleanPublic() {
   return del('public');
 }
 
-function images() {
-  return src('src/images/**/*')
-    .pipe(webp())
-    .pipe(newer('src/images'))
-    .pipe(
-      imagemin({
-        progressive: true,
-        svgoPlugins: [{ removeViewBox: false }],
-        interlaced: true,
-        optimizationLevel: 3,
-      })
-    )
-    .pipe(dest('src/images'))
-    .pipe(browserSync.stream());
-}
-
 function scripts() {
   return src(['src/js/*.js', '!src/js/main.min.js'])
     .pipe(sourcemaps.init())
@@ -65,8 +49,8 @@ function scripts() {
 function styles() {
   return src('src/scss/main.scss')
     .pipe(sourcemaps.init())
-    .pipe(concat('main.min.css'))
-    .pipe(scss({ outputStyle: 'compressed' }).on('error', scss.logError))
+    .pipe(concat('main.css'))
+    .pipe(scss({}).on('error', scss.logError))
     .pipe(
       autoprefixer({
         overrideBrowserslist: ['last 10 versions'],
@@ -100,7 +84,6 @@ function html() {
       // и расскоментить index.php
       // .pipe(concat('index.php'))
       .pipe(concat('index.html'))
-      .pipe(htmlmin({ collapseWhitespace: true, removeComments: true }))
       .pipe(dest('src'))
       .pipe(browserSync.stream())
   );
@@ -108,7 +91,6 @@ function html() {
 
 function watching() {
   watch(['src/scss/**/*.scss'], styles);
-  watch(['src/images/**/*'], images);
   watch(['src/js/**/*.js', '!src/js/main.min.js'], scripts);
   watch(['src/**/*.{html,php}', '!src/index.{html,php}'], html);
 }
@@ -117,13 +99,11 @@ exports.styles = styles;
 exports.watching = watching;
 exports.browsersync = browsersync;
 exports.scripts = scripts;
-exports.images = images;
 exports.cleanPublic = cleanPublic;
 
 exports.build = series(cleanPublic, build);
 exports.default = parallel(
   html,
-  images,
   styles,
   scripts,
   browsersync,

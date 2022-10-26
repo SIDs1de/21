@@ -165,16 +165,17 @@ body {
     &::after {
       content: "";
       position: absolute;
-      left: 0;
+      left: 50%;
+      transform: translateX(-50%);
       bottom: -1px;
       width: 100%;
       height: 1px;
       background-color: #666;
-      transition: color 0.2s;
+      transition: width 0.2s;
     }
     &:hover {
       &::after {
-        background-color: #000;
+        width: 0;
       }
     }
   }
