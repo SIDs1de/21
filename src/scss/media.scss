@@ -1,0 +1,190 @@
+// Здесь находятся все медиазапросы, вынесены в отдельный файл для удобства
+
+@media (max-width: 1000px) {
+  .header {
+    &__menu {
+      opacity: 0;
+      pointer-events: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      width: 100%;
+      height: 100vh;
+      background-color: #fff4d5;
+      margin: 0;
+      padding-top: 165px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+      overflow-y: auto;
+      transition: opacity .2s;
+      &.active {
+        opacity: 1;
+        pointer-events: initial;
+      }
+    }
+
+    &__links-wrapper {
+      order: -2;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 68px;
+    }
+
+    &__link-item + &__link-item {
+      margin-top: 55px;
+    }
+
+    &__link-item:last-child {
+      .header__link {
+        &::after {
+          display: none;
+        }
+      }
+    }
+
+    &__link {
+      font-size: 30px;
+      font-weight: 700;
+      &::after {
+        bottom: -27px;
+        background-color: #fff;
+        width: 320px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      &:hover {
+        &::after {
+          background-color: #fff !important;
+        }
+      }
+    }
+
+    &__info-wrapper {
+      flex-direction: column;
+      margin-bottom: 65px;
+    }
+
+    &__phone {
+      order: 2;
+      margin: 0;
+      font-size: 25px;
+      font-weight: 700;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        height: 1px;
+        width: 100%;
+        background-color: #000;
+      }
+    }
+
+    &__phone-link {
+      &::before {
+        display: none;
+      }
+    }
+
+    &__whatsapp-telegram {
+      margin-bottom: 33px;
+      display: flex;
+      flex-direction: column;
+      font-size: 14px;
+      font-weight: 700;
+      padding-left: 0;
+      &::before {
+        display: none;
+      }
+      span {
+        display: none;
+      }
+    }
+
+    &__whatsapp-link {
+      position: relative;
+      padding: 17px 55px 17px 34px;
+      background-color: #ffd24d;
+      border-radius: 25px;
+      text-align: center;
+      margin-bottom: 16px;
+      span {
+        display: inline !important;
+      }
+      &::before {
+        display: none;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 22px;
+        transform: translateY(-50%);
+        width: 18px;
+        height: 18px;
+        background: url("../images/icons/iсons-tovar-whatsapp.svg") center/contain no-repeat;
+      }
+    }
+
+    &__telegram-link {
+      position: relative;
+      padding: 17px 55px 17px 34px;
+      background-color: #ffd24d;
+      border-radius: 25px;
+      text-align: center;
+      span {
+        display: inline !important;
+      }
+      &::before {
+        display: none;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 22px;
+        transform: translateY(-50%);
+        width: 18px;
+        height: 18px;
+        background: url("../images/icons/iсons-tovar-telegram.svg") center/contain no-repeat;
+      }
+    }
+
+    &__vk-link {
+      &::after {
+        width: 57px;
+        height: 57px;
+        transform: translate(-21%, -35%);
+      }
+    }
+
+    &__vk-link-img {
+      width: 32px;
+      height: 18px;
+    }
+  }
+}
+
+@media (min-width: 1000px) {
+  .header__burger {
+    display: none;
+  }
+}
+
+@media (max-width: 920px) {
+  .address {
+    &__inner {
+      flex-direction: column;
+    }
+    &__text-address {
+      margin-bottom: 29px;
+      flex-direction: column;
+    }
+    &__copy {
+      margin-bottom: 16px;
+    }
+  }
+}

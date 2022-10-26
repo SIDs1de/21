@@ -1,0 +1,405 @@
+// Главный файл, где пишутся и куда подключаются все стили проекта
+
+// Адаптивное свойство - используется, если дизайнером предоставлен неполный макет,
+// чтобы при уменьшении или увеличении экрана паддинги, размеры шрифта автоматически
+// увеличивались / уменьшались в границах от десктопного значения до телефонного
+// Подробнее: https://www.youtube.com/watch?v=eaOAY0vIB4U
+$maxWidth: 1920; // Для масштабирования, например, текста, если экран будет увеличиваться и станет больше контейнера
+$maxWidthContainer: 1200; // Для масштабирования, например, текста, если экран будет уменьшаться и станет меньше контейнера
+
+// Импорт дополнительных файлов стилей и настроек
+@import "variables";
+@import "../../node_modules/normalize.css/normalize";
+@import "start";
+@import "mixins/font-face";
+@import "mixins/adaptive-value";
+@import "fonts";
+@import "global";
+
+// Основная часть
+html {
+  &.lock {
+    overflow-y: hidden;
+  }
+}
+
+body {
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 15px;
+  line-height: calc(24 / 15);
+  color: #000;
+}
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+// HEADER
+.header {
+  position: relative;
+  a {
+    position: relative;
+    &::before {
+      position: absolute;
+      content: "";
+      bottom: -8px;
+      width: 100%;
+      height: 1px;
+      left: 0;
+      background-color: #aaa;
+      transition: transform 0.2s, opacity 0.2s;
+      opacity: 0;
+      transform: translateY(5px);
+    }
+    &:hover {
+      &::before {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #ddd;
+  }
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    padding: 23px 0;
+    align-items: center;
+  }
+  &__logo-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+  }
+  &__logo {
+    margin-right: 12px;
+  }
+  &__logo-info-wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 125px;
+  }
+  &__logo-title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: calc(20.4 / 24);
+    margin-bottom: 6px;
+  }
+  &__logo-text {
+    font-size: 13px;
+    line-height: calc(18.2 / 13);
+  }
+  &__menu {
+    display: flex;
+    justify-content: space-between;
+    flex: 1 0 auto;
+    @include adaptive-value("margin-left", 110, -250, 1);
+  }
+  &__info-wrapper {
+    display: flex;
+    align-items: center;
+  }
+  &__phone {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: calc(15.3 / 18);
+    letter-spacing: 0.3px;
+    margin-right: 14px;
+    margin-right: 16px;
+  }
+  &__phone-link {
+  }
+  &__whatsapp-telegram {
+    font-size: 13px;
+    line-height: calc(18.2 / 13);
+    letter-spacing: 0.1px;
+    padding-left: 29px;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 18px;
+      height: 18px;
+      background: url("../images/icons/iсons-tovar-whatsapp.svg") center/contain no-repeat;
+    }
+  }
+  &__whatsapp-link {
+  }
+  &__telegram-link {
+  }
+  &__links-wrapper {
+    display: flex;
+    margin: 0 -14px;
+  }
+  &__link-item {
+    margin: 0 14px;
+  }
+  &__link {
+    line-height: calc(21 / 15);
+    &::before {
+      display: none;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+      width: 100%;
+      height: 1px;
+      background-color: #666;
+      transition: color 0.2s;
+    }
+    &:hover {
+      &::after {
+        background-color: #000;
+      }
+    }
+  }
+  &__vk {
+  }
+  &__vk-link {
+    &::before {
+      display: none;
+    }
+    position: relative;
+    z-index: 2;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 45px;
+      height: 45px;
+      background-color: #f3f3f3;
+      border-radius: 50%;
+      left: 0;
+      top: 0;
+      transform: translate(-23%, -30%);
+      transition: background-color 0.2s;
+      cursor: pointer;
+      z-index: 1;
+    }
+    &:hover {
+      &::after {
+        background-color: #e0e0e0;
+      }
+    }
+  }
+  &__vk-link-img {
+    position: relative;
+    z-index: 3;
+  }
+  &__burger {
+    cursor: pointer;
+    position: relative;
+    z-index: 20;
+  }
+}
+
+// MAIN
+.main {
+  &__advantages {
+    padding: 35px 0 43px;
+  }
+  &__categories {
+    @include adaptive-value("margin-bottom", 50, 42, 1);
+  }
+  &__quick {
+    @include adaptive-value("margin-bottom", 45, 38, 1);
+  }
+  &__address {
+  }
+}
+
+// ADVANTAGES
+.advantages {
+  &__swiper {
+    overflow: visible;
+  }
+  &__swiper-wrapper {
+  }
+  &__swiper-slide {
+    border-radius: 24px;
+    background-color: #ffe9a4;
+    height: 150px;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  &__swiper-slide-inner {
+    padding: 27px;
+  }
+  &__swiper-slide-text {
+    width: 100px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: calc(21.6 / 18);
+  }
+}
+
+.categories {
+  &__inner {
+  }
+  &__title {
+    @include adaptive-value("margin-bottom", 45, 27, 1);
+  }
+  &__list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: -15px -8px;
+  }
+  &__item {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin: 15px 8px;
+  }
+  &__item-inner {
+    padding: 25px 25px 35px;
+  }
+  &__item-img-wrapper {
+    margin-bottom: 23px;
+  }
+  &__item-img {
+  }
+  &__item-title {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: calc(26 / 20);
+    margin-bottom: 17px;
+  }
+  &__item-btn-wrapper {
+    width: 100%;
+  }
+  &__item-btn {
+    padding: 15px 0;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: calc(12.75 / 15);
+    width: 100%;
+    text-align: center;
+    border-radius: 20px;
+    background-color: #ffd24d;
+    transition: background-color 0.2s;
+    &:hover {
+      background: darken(#ffd24d, 20%);
+    }
+  }
+}
+
+// QUICK
+.quick {
+  &__inner {
+  }
+  &__title {
+    @include adaptive-value("font-size", 24, 21, 1);
+    font-weight: 700;
+    line-height: calc(28.8 / 24);
+    @include adaptive-value("margin-bottom", 28, 19, 1);
+  }
+  &__main-text-wrapper {
+  }
+  &__main-text {
+    @include adaptive-value("font-size", 15, 13, 1);
+    line-height: calc(24 / 15);
+  }
+}
+
+// ADDRESS
+.address {
+  background: #fff4d5;
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 0 25px;
+  }
+  &__text-address {
+    display: flex;
+    align-items: center;
+  }
+  &__copy {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: calc(11.05 / 13);
+    margin-right: 12px;
+  }
+  &__address {
+    font-size: 13px;
+    @include adaptive-value("font-size", 13, 11, 1);
+    line-height: calc(16.9 / 13);
+  }
+  &__pay-list {
+    display: flex;
+    align-items: center;
+    margin: 0 -5px;
+  }
+  &__pay-item {
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  &__pay-item-img {
+  }
+}
+
+// PRIVACY
+.privacy {
+  &__inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0 35px;
+  }
+  &__link {
+    position: relative;
+    @include adaptive-value("font-size", 15, 12, 1);
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #a1a1a1;
+      transition: background-color 0.15s;
+    }
+    &:hover {
+      &::before {
+        background-color: #777;
+      }
+    }
+  }
+}
+
+*::-webkit-scrollbar {
+  width: 14px; /* ширина scrollbar */
+}
+*::-webkit-scrollbar-track {
+  background: #fff; /* цвет дорожки */
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #cacaca; /* цвет плашки */
+  &:hover {
+    background-color: #aaa;
+  }
+  &:active {
+    background-color: #888;
+  }
+  border-radius: 10px;
+  border: 2px solid #fff; /* padding вокруг плашки */
+}
+
+@import "media";
