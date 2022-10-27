@@ -45,6 +45,18 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
   <link href="css/main.css" rel="stylesheet">
 
+  <script>
+    function copyLink(e) {
+      let link = e.target.dataset.link;
+      let tmp = document.createElement('INPUT');
+      tmp.value = link;
+      document.body.appendChild(tmp);
+      tmp.select();
+      document.execCommand('copy');
+      document.body.removeChild(tmp);
+    }
+  </script>
+
 </head>
 
 <body>
@@ -92,17 +104,121 @@
   </header>
 
   <main class="main">
-    <section class="categories main__categories main__categories--margin-top">
+    <section class="categories main__categories main__categories--margin-top categories--flex-big">
       <div class="container">
         <div class="categories__inner">
           <div class="categories__title-wrapper">
-
-            <div class="categories__catalog">
+            <div class="categories__catalog categories__catalog--no-ml">
               <a class="categories__catalog-link" href="category.html">
                 Вернуться в шкатулки
               </a>
             </div>
           </div>
+
+          <section class="tovar">
+            <div class="tovar__inner">
+              <div class="tovar__slider">
+
+
+                <!-- Slider main container -->
+                <div class="tovar__swiper swiper">
+                  <!-- Additional required wrapper -->
+                  <div class="tovar__swiper-wrapper swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="tovar__swiper-slide swiper-slide">Slide 1</div>
+                    <div class="tovar__swiper-slide swiper-slide">Slide 2</div>
+                    <div class="tovar__swiper-slide swiper-slide">Slide 3</div>
+                  </div>
+                  <!-- If we need pagination -->
+                  <div class="swiper-pagination"></div>
+                </div>
+
+
+                <!-- Slider main container -->
+                <div class="tovar-mini__swiper swiper">
+                  <!-- Additional required wrapper -->
+                  <div class="tovar-mini__swiper-wrapper swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="tovar-mini__swiper-slide swiper-slide">Slide 1</div>
+                    <div class="tovar-mini__swiper-slide swiper-slide">Slide 2</div>
+                    <div class="tovar-mini__swiper-slide swiper-slide">Slide 3</div>
+                  </div>
+                  <!-- If we need pagination -->
+                  <div class="swiper-mini-pagination"></div>
+                </div>
+
+
+
+
+
+
+
+
+              </div>
+              <div class="tovar__info">
+                <p class="tovar__title">
+                  Набор украшений Леди
+                  цвет серый
+                </p>
+                <button class="tovar__link-btn" onclick="copyLink(event)" data-link="testtesttest">
+                  Копировать ссылку
+                </button>
+                <p class="tovar__par">
+                  Набор украшений для девочки, в который входят оригинальные резиночки, заколки и бантики. В комплекте
+                  входит 40 предметов и подарочная упаковка. Такой подарок отлично подойдет для дня рождения юной
+                  принцессы. Размер коробки: 30x20 см.
+                </p>
+                <p class="tovar__par">
+                  * Аксессуары не входят в комлект. <br>
+                  Заказать аксессуары вы можете <a href="#">по ссылке</a>.
+                </p>
+                <div class="tovar__price-wrapper">
+                  <p class="tovar__price-number">
+                    800 ₽
+                  </p>
+                  <img class="tovar__price-img" src="images/icons/iсons-delivery-car.svg" alt="Иконка доставки">
+                  <p class="tovar__price-text">
+                    Бесплатная доставка при заказе от 2500 ₽
+                  </p>
+                </div>
+                <ul class="tovar__order-btns-wrapper">
+                  <li class="tovar__order-item">
+                    <a class="tovar__order-link" href="#">
+                      Заказ через Telegram
+                    </a>
+                  </li>
+                  <li class="tovar__order-item">
+                    <a class="tovar__order-link" href="#">
+                      Заказ через WhatsApp
+                    </a>
+                  </li>
+                  <li class="tovar__order-item">
+                    <a class="tovar__order-link" href="#">
+                      Заказать по телефону
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section class="reviews">
+            <div class="reviews__inner">
+              <p class="reviews__title">
+                Отзывы о товаре
+              </p>
+              <p class="reviews__text">
+                Пожалуйста оставьте здесь отзыв о данном товаре, это поможет будущим покупателям при выборе.
+              </p>
+              <div class="reviews__vk">
+                <!-- !!! -->
+              </div>
+            </div>
+          </section>
+
+          <p class="categories__subtitle">
+            С этим товаром рекомендуем
+          </p>
 
           <ul class="categories__list">
 
@@ -198,120 +314,8 @@
               </div>
             </li>
 
-            <li class="categories__item">
-              <div class="categories__item-inner">
-                <div class="categories__item-img-wrapper">
-                  <img class="categories__item-img" src="images/tovar-05.jpg" alt="Превью для товара">
-                </div>
-
-                <p class="categories__item-text">
-                  Набор украшений
-                  Юная леди
-                </p>
-
-                <p class="categories__item-title">
-                  800 ₽
-                </p>
-
-                <div class="categories__item-btn-wrapper">
-                  <a class="categories__item-btn" href="#">
-                    подробнее
-                  </a>
-                </div>
-              </div>
-            </li>
-
-            <li class="categories__item">
-              <div class="categories__item-inner">
-                <div class="categories__item-img-wrapper">
-                  <img class="categories__item-img" src="images/tovar-03.jpg" alt="Превью для товара">
-                </div>
-
-                <p class="categories__item-text">
-                  Набор украшений
-                  Юная леди
-                </p>
-
-                <p class="categories__item-title">
-                  800 ₽
-                </p>
-
-                <div class="categories__item-btn-wrapper">
-                  <a class="categories__item-btn" href="#">
-                    подробнее
-                  </a>
-                </div>
-              </div>
-            </li>
-
-            <li class="categories__item">
-              <div class="categories__item-inner">
-                <div class="categories__item-img-wrapper">
-                  <img class="categories__item-img" src="images/tovar-big.jpg" alt="Превью для товара">
-                </div>
-
-                <p class="categories__item-text">
-                  Набор украшений
-                  Юная леди
-                </p>
-
-                <p class="categories__item-title">
-                  800 ₽
-                </p>
-
-                <div class="categories__item-btn-wrapper">
-                  <a class="categories__item-btn" href="#">
-                    подробнее
-                  </a>
-                </div>
-              </div>
-            </li>
-
-            <li class="categories__item">
-              <div class="categories__item-inner">
-                <div class="categories__item-img-wrapper">
-                  <img class="categories__item-img" src="images/tovar-06.jpg" alt="Превью для товара">
-                </div>
-
-                <p class="categories__item-text">
-                  Набор украшений
-                  Юная леди
-                </p>
-
-                <p class="categories__item-title">
-                  800 ₽
-                </p>
-
-                <div class="categories__item-btn-wrapper">
-                  <a class="categories__item-btn" href="#">
-                    подробнее
-                  </a>
-                </div>
-              </div>
-            </li>
-
-
 
           </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="quick main__quick">
-      <div class="container">
-        <div class="quick__inner">
-          <h2 class="quick__title">
-            Подарочные шкатулки для детей
-          </h2>
-          <div class="quick__main-text-wrapper">
-            <p class="quick__main-text">
-              Не успеваете быстро заказать игрушку или подарок на день рождения ребенку? Интернет-магазин Toy Express
-              придет к вам на помощь, предлагая большое количество качественных товаров по выгодным ценам. В нашем
-              магазине можно найти отличные подарки на день рождения, которые обязательно оценит каждый именинник. Мы
-              быстро доставляем товары в пределах Санкт-Петербурга, а также отправляем по всей территории Российской
-              Федерации.
-            </p>
-          </div>
         </div>
       </div>
     </section>
