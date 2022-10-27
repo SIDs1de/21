@@ -591,6 +591,9 @@ body .main {
 }
 .header__link {
   line-height: 1.4;
+  -webkit-transition: color 0.2s;
+  -o-transition: color 0.2s;
+  transition: color 0.2s;
 }
 .header__link::before {
   display: none;
@@ -606,12 +609,16 @@ body .main {
   width: 100%;
   height: 1px;
   background-color: #666;
-  -webkit-transition: width 0.2s;
-  -o-transition: width 0.2s;
-  transition: width 0.2s;
+  -webkit-transition: width 0.2s, background-color 0.2s;
+  -o-transition: width 0.2s, background-color 0.2s;
+  transition: width 0.2s, background-color 0.2s;
+}
+.header__link:hover {
+  color: #006ddd;
 }
 .header__link:hover::after {
   width: 0;
+  background-color: #006ddd;
 }
 .header__vk-link {
   position: relative;
@@ -872,6 +879,9 @@ body .main {
 .privacy__link {
   position: relative;
   font-size: 15px;
+  -webkit-transition: color 0.2s;
+  -o-transition: color 0.2s;
+  transition: color 0.2s;
 }
 @media (max-width: 1200px) {
   .privacy__link {
@@ -886,14 +896,22 @@ body .main {
   width: 100%;
   height: 2px;
   background-color: #a1a1a1;
-  -webkit-transition: background-color 0.15s;
-  -o-transition: background-color 0.15s;
-  transition: background-color 0.15s;
+  -webkit-transition: background-color 0.2s;
+  -o-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+.privacy__link:hover {
+  color: #006ddd;
 }
 .privacy__link:hover::before {
-  background-color: #777;
+  background-color: #006ddd;
 }
 
+.delivery {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+}
 .delivery__inner {
   padding-top: 65px;
   padding-bottom: 60px;
