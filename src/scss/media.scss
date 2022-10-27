@@ -221,8 +221,16 @@
       }
     }
   }
-}
 
+  .categories {
+    &__title-wrapper {
+      flex-direction: column;
+    }
+    &__catalog {
+      margin-left: 0;
+    }
+  }
+}
 
 
 @media (min-width: 700px) {

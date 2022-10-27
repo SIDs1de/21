@@ -225,6 +225,9 @@ body {
   }
   &__categories {
     @include adaptive-value("margin-bottom", 50, 42, 1);
+    &--margin-top {
+      margin-top: 45px;
+    }
   }
   &__quick {
     @include adaptive-value("margin-bottom", 45, 38, 1);
@@ -279,17 +282,23 @@ body {
   }
   &__item-inner {
     padding: 25px 25px 35px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    max-width: 280px;
   }
   &__item-img-wrapper {
     margin-bottom: 23px;
   }
   &__item-img {
+    display: block;
   }
   &__item-title {
     font-size: 20px;
     font-weight: 700;
     line-height: calc(26 / 20);
     margin-bottom: 17px;
+    flex: 1 0 auto;
   }
   &__item-btn-wrapper {
     width: 100%;
@@ -433,7 +442,7 @@ body {
     margin-top: 50px;
     position: relative;
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       height: 1px;
       width: 100%;
@@ -444,7 +453,7 @@ body {
   }
   &__item-title {
     font-weight: 700;
-    @include adaptive-value('font-size', 22, 19, 1);
+    @include adaptive-value("font-size", 22, 19, 1);
     line-height: calc(26.4 / 22);
     margin-bottom: 26px;
     padding-left: 52px;
@@ -464,7 +473,6 @@ body {
     line-height: calc(24 / 15);
   }
 }
-
 
 .kontakty {
   &__inner {
@@ -505,7 +513,7 @@ body {
     margin-top: 50px;
     position: relative;
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       height: 1px;
       width: 100%;
@@ -516,7 +524,7 @@ body {
   }
   &__item-title {
     font-weight: 700;
-    @include adaptive-value('font-size', 22, 19, 1);
+    @include adaptive-value("font-size", 22, 19, 1);
     line-height: calc(26.4 / 22);
     margin-bottom: 26px;
     padding-left: 52px;
@@ -537,9 +545,9 @@ body {
     a {
       color: #006ddd;
       position: relative;
-      transition: color .2s;
+      transition: color 0.2s;
       &::before {
-        content: '';
+        content: "";
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
@@ -547,7 +555,7 @@ body {
         height: 1px;
         width: 100%;
         background-color: #006ddd;
-        transition: width .2s;
+        transition: width 0.2s;
       }
       &:hover {
         color: darken(#006ddd, 20%);
@@ -556,6 +564,44 @@ body {
         }
       }
     }
+  }
+}
+
+.categories {
+
+  &__title-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  &__catalog {
+    text-align: center;
+    margin-left: 22px;
+  }
+
+  &__catalog-link {
+    margin-bottom: 42px;
+    padding: 14px 20px 14px 35px;
+    border: 2px solid #ffd24e;
+    border-radius: 30px;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 7px;
+      height: 13px;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: url("../images/icons/arrow-left-little.svg") center/contain no-repeat;
+    }
+  }
+
+  &__item-text {
+    font-size: 15px;
+    line-height: calc(19.5 / 15);
+    max-width: 170px;
+    margin-bottom: 13px;
   }
 }
 
