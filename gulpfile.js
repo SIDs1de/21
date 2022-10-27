@@ -67,7 +67,7 @@ function build() {
       'src/fonts/**/*',
       'src/js/**/*.js',
       '!src/js/main.js',
-      'src/**/index.html',
+      'src/*.html',
       'src/images/**/*',
     ],
     { base: 'src' }
