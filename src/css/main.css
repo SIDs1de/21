@@ -1079,6 +1079,28 @@ body .main {
   width: 0;
 }
 
+.tovar {
+  margin-bottom: 20px;
+}
+
+.reviews {
+  margin-bottom: 40px;
+}
+.reviews__title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+.reviews__text {
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+
+.categories--flex-big {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+}
 .categories__title-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1090,6 +1112,9 @@ body .main {
 .categories__catalog {
   text-align: center;
   margin-left: 22px;
+}
+.categories__catalog--no-ml {
+  margin-left: 0;
 }
 .categories__catalog-link {
   margin-bottom: 42px;
@@ -1115,6 +1140,158 @@ body .main {
   line-height: 1.3;
   max-width: 170px;
   margin-bottom: 13px;
+}
+.categories__subtitle {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 31px;
+}
+
+.tovar__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.tovar__slider {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 50%;
+          flex: 1 0 50%;
+}
+.tovar__info {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 50%;
+          flex: 1 0 50%;
+}
+.tovar__title {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.2;
+  max-width: 450px;
+  margin-bottom: 18px;
+}
+.tovar__link-btn {
+  position: relative;
+  font-size: 13px;
+  line-height: 0.85;
+  font-weight: 700;
+  padding: 10px 25px 9px 45px;
+  border-radius: 30px;
+  background-color: transparent;
+  border: 2px solid #ffd24e;
+  cursor: pointer;
+  margin-bottom: 29px;
+}
+.tovar__link-btn::before {
+  content: "";
+  position: absolute;
+  left: 17px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 16px;
+  height: 19px;
+  background: url("../images/icons/copy-link.svg") center/contain no-repeat;
+}
+.tovar__par {
+  font-size: 15px;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+.tovar__par a {
+  color: #006ddd;
+  cursor: pointer;
+  position: relative;
+  -webkit-transition: color 0.2s;
+  -o-transition: color 0.2s;
+  transition: color 0.2s;
+}
+.tovar__par a::after {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  width: 100%;
+  height: 1px;
+  background-color: #006ddd;
+  left: 0;
+  -webkit-transition: background-color 0.2s;
+  -o-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+.tovar__par a:hover {
+  color: #003b77;
+}
+.tovar__par a:hover::after {
+  background-color: #003b77;
+}
+.tovar__price-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 24px;
+}
+.tovar__price-number {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 0.8472222222;
+  margin-right: 12px;
+}
+.tovar__price-img {
+  margin-right: 16px;
+}
+.tovar__order-item {
+  position: relative;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 0.85;
+  width: 250px;
+}
+.tovar__order-item::after {
+  content: "";
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
+}
+.tovar__order-item:nth-child(1)::after {
+  width: 18px;
+  height: 16px;
+  background: url("../images/icons/iсons-tovar-telegram.svg") center/contain no-repeat;
+}
+.tovar__order-item:nth-child(2)::after {
+  width: 18px;
+  height: 18px;
+  background: url("../images/icons/iсons-tovar-whatsapp.svg") center/contain no-repeat;
+}
+.tovar__order-item:nth-child(3)::after {
+  width: 15px;
+  height: 15px;
+  background: url("../images/icons/iсons-tovar-phone.svg") center/contain no-repeat;
+}
+.tovar__order-item + .tovar__order-item {
+  margin-top: 16px;
+}
+.tovar__order-link {
+  border-radius: 30px;
+  padding: 18px 0 18px 26px;
+  width: 100%;
+  background-color: #ffd24d;
+  -webkit-transition: background-color 0.2s;
+  -o-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+.tovar__order-link:hover {
+  background-color: #e6ac00;
 }
 
 *::-webkit-scrollbar {

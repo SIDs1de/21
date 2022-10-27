@@ -586,7 +586,27 @@ body {
   }
 }
 
+.tovar {
+  margin-bottom: 20px;
+}
+
+.reviews {
+  margin-bottom: 40px;
+  &__title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 25px;
+  }
+  &__text {
+    font-size: 15px;
+    margin-bottom: 30px;
+  }
+}
+
 .categories {
+  &--flex-big {
+    flex: 1 0 auto;
+  }
   &__title-wrapper {
     display: flex;
     align-items: center;
@@ -595,6 +615,9 @@ body {
   &__catalog {
     text-align: center;
     margin-left: 22px;
+    &--no-ml {
+      margin-left: 0;
+    }
   }
 
   &__catalog-link {
@@ -620,6 +643,148 @@ body {
     line-height: calc(19.5 / 15);
     max-width: 170px;
     margin-bottom: 13px;
+  }
+
+  &__subtitle {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 31px;
+  }
+}
+
+.tovar {
+  &__inner {
+    display: flex;
+  }
+  &__slider {
+    flex: 1 0 50%;
+  }
+  &__info {
+    flex: 1 0 50%;
+  }
+  &__title {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: calc(36 / 30);
+    max-width: 450px;
+    margin-bottom: 18px;
+  }
+  &__link-btn {
+    position: relative;
+    font-size: 13px;
+    line-height: calc(11.05 / 13);
+    font-weight: 700;
+    padding: 10px 25px 9px 45px;
+    border-radius: 30px;
+    background-color: transparent;
+    border: 2px solid #ffd24e;
+    cursor: pointer;
+    margin-bottom: 29px;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 17px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 19px;
+      background: url("../images/icons/copy-link.svg") center/contain no-repeat;
+    }
+  }
+  &__par {
+    font-size: 15px;
+    line-height: calc(22.5 / 15);
+    margin-bottom: 30px;
+    a {
+      color: #006ddd;
+      cursor: pointer;
+      position: relative;
+      transition: color 0.2s;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 2px;
+        width: 100%;
+        height: 1px;
+        background-color: #006ddd;
+        left: 0;
+        transition: background-color 0.2s;
+      }
+      &:hover {
+        color: darken(#006ddd, 20%);
+        &::after {
+          background-color: darken(#006ddd, 20%);
+        }
+      }
+    }
+  }
+  &__price-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  &__price-number {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: calc(30.5 / 36);
+    margin-right: 12px;
+  }
+  &__price-img {
+    margin-right: 16px;
+  }
+  &__price-text {
+  }
+  &__order-btns-wrapper {
+  }
+  &__order-item {
+    position: relative;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: calc(11.9 / 14);
+    width: 250px;
+    &::after {
+      content: "";
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      user-select: none;
+      pointer-events: none;
+    }
+    &:nth-child(1) {
+      &::after {
+        width: 18px;
+        height: 16px;
+        background: url("../images/icons/iсons-tovar-telegram.svg") center/contain no-repeat;
+      }
+    }
+    &:nth-child(2) {
+      &::after {
+        width: 18px;
+        height: 18px;
+        background: url("../images/icons/iсons-tovar-whatsapp.svg") center/contain no-repeat;
+      }
+    }
+    &:nth-child(3) {
+      &::after {
+        width: 15px;
+        height: 15px;
+        background: url("../images/icons/iсons-tovar-phone.svg") center/contain no-repeat;
+      }
+    }
+  }
+  &__order-item + &__order-item {
+    margin-top: 16px;
+  }
+  &__order-link {
+    border-radius: 30px;
+    padding: 18px 0 18px 26px;
+    width: 100%;
+    background-color: #ffd24d;
+    transition: background-color 0.2s;
+    &:hover {
+      background-color: darken(#ffd24d, 20%);
+    }
   }
 }
 
