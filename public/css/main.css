@@ -400,6 +400,10 @@ textarea {
   background-image: url("../images/bg-04.jpg");
 }
 
+html {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
 html.lock {
   overflow-y: hidden;
 }
@@ -410,6 +414,19 @@ body {
   font-size: 15px;
   line-height: 1.6;
   color: #000;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+body .main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
 }
 
 .container {
@@ -634,6 +651,16 @@ body {
   z-index: 20;
 }
 
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+}
 .main__advantages {
   padding: 35px 0 43px;
 }
@@ -650,6 +677,9 @@ body {
 }
 .main__quick {
   margin-bottom: 45px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
 }
 @media (max-width: 1200px) {
   .main__quick {
@@ -931,6 +961,11 @@ body {
   line-height: 1.6;
 }
 
+.kontakty {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+}
 .kontakty__inner {
   padding-top: 65px;
   padding-bottom: 60px;
