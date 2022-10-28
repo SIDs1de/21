@@ -120,92 +120,130 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  const mainTovarSlider = new Swiper('.page', {
-  // Свои классы
-  wrapperClass: 'page__wrapper',
-  slideClass: 'page__screen',
+  const mainTovarSlider = new Swiper('.tovar__swiper', {
+    // Свои классы
+    wrapperClass: 'tovar__swiper-wrapper',
+    slideClass: 'tovar__swiper-slide',
 
-  // Вертикальный слайдер
-  direction: 'vertical',
+    // Количество слайдов для показа
+    slidesPerView: 1,
 
-  // Количество слайдов для показа
-  slidesPerView: 1,
+    effect: 'fade',
 
-  // Включаем параллакс
-  parallax: true,
-
-  // Управление клавиатурой
-  keyboard: {
-    // Включить\выключить
-    enabled: true,
-    // Включить\выключить только когда слайдер в пределах вьюпорта
-    onlyInViewport: true,
-    // Включить\выключить управление клавишами pageUp, pageDown
-    pageUpDown: true,
-  },
-
-  // Управление колесом мыши
-  mousewheel: {
-    // Чувствительность колеса мыши
-    sensitivity: 1,
-    // Класс объекта, на котором будет
-    // срабатывать прокрутка мышью
-    // events.target: '.image-slider'
-  },
-
-  // Отключение функционала
-  // при изменении элементов слайдера
-  watchOverflow: true,
-
-  // Скорость
-  speed: 800,
-
-  // Обновить свайпер
-  // при изменении родительских
-  // элементов слайдера
-  observeParents: true,
-
-  // Обновить свайпер
-  // при изменении дочерних
-  // элементов слайда
-  observeSlideChildren: true,
-
-  // Навигация
-  // Буллеты, текущее положение, прогрессбар
-  pagination: {
-    el: '.page__pagination',
-    type: 'bullets',
-    clickable: true,
-    bulletClass: 'page__bullet',
-    bulletActiveClass: 'page__bullet_active',
-  },
-  // Скролл
-  scrollbar: {
-    el: '.page__scroll',
-    dragClass: 'page__drag-scroll',
-    // Возможность перетаскивать скролл
-    draggable: true,
-  },
-
-  // Отключаем автоинициализацию
-  init: false,
-
-  // События
-  on: {
-    // Событие инициализации
-    init: function () {
-      menuSlider();
-      setScrollType();
-      wrapper.classList.add('_loaded');
+    // Управление клавиатурой
+    keyboard: {
+      // Включить\выключить
+      enabled: true,
+      // Включить\выключить только когда слайдер в пределах вьюпорта
+      onlyInViewport: true,
+      // Включить\выключить управление клавишами pageUp, pageDown
+      pageUpDown: true,
     },
-    // Событие смены слайда
-    slideChange: function () {},
 
-    resize: function () {},
-  },
-});
+    // Отключение функционала
+    // при изменении элементов слайдера
+    watchOverflow: true,
 
+    // Скорость
+    speed: 600,
 
+    // Обновить свайпер
+    // при изменении родительских
+    // элементов слайдера
+    observeParents: true,
+
+    // Обновить свайпер
+    // при изменении дочерних
+    // элементов слайда
+    observeSlideChildren: true,
+
+    navigation: {
+      nextEl: '.tovar__swiper-button-next',
+      prevEl: '.tovar__swiper-button-prev',
+    },
+
+    breakpoints: {
+      1200: {
+        navigation: false,
+        // navigation: {
+        //   nextEl: '.tovar__swiper-button-next',
+        //   prevEl: '.tovar__swiper-button-prev',
+        // }
+      },
+    },
+
+    thumbs: {
+      swiper: {
+        el: '.tovar-mini__swiper',
+        slidesPerView: 'auto',
+        speed: 600,
+        wrapperClass: 'tovar-mini__swiper-wrapper',
+        slideClass: 'tovar-mini__swiper-slide',
+
+        direction: 'horizontal',
+
+        spaceBetween: 20,
+
+        slideToClickedSlide: true,
+
+        // Управление клавиатурой
+        keyboard: {
+          // Включить\выключить
+          enabled: true,
+          // Включить\выключить только когда слайдер в пределах вьюпорта
+          onlyInViewport: true,
+          // Включить\выключить управление клавишами pageUp, pageDown
+          pageUpDown: true,
+        },
+        breakpoints: {
+          1200: {
+            direction: 'vertical',
+          },
+        },
+      },
+    },
+  });
+
+  const copyLink = (e) => {
+    let link = e.target.dataset.link;
+    let tmp = document.createElement('INPUT');
+    tmp.value = link;
+    document.body.appendChild(tmp);
+    tmp.select();
+    document.execCommand('copy');
+    document.body.removeChild(tmp);
+  };
+
+  const link = () => {
+    const tovarLinkBtn = document.querySelector('.tovar__link-btn');
+
+    if (tovarLinkBtn) {
+      tovarLinkBtn.addEventListener('click', (e) => {
+        copyLink(e);
+        tovarLinkBtn.classList.add('copied');
+        tovarLinkBtn.innerHTML = 'Скопировано';
+      });
+    }
+  };
+
+  const video = () => {
+    const videoWrapper = document.querySelector(
+      '.tovar__swiper-slide-img-wrapper--video'
+    );
+
+    const video = videoWrapper.querySelector('.tovar__swiper-slide-img');
+
+    video.addEventListener('play', () => {
+      videoWrapper.classList.remove('tovar__swiper-slide-img-wrapper--video');
+    });
+
+    video.addEventListener('pause', () => {
+      videoWrapper.classList.add('tovar__swiper-slide-img-wrapper--video');
+    });
+  };
+
+  video();
+  link();
   burger();
   menuScroll();
 });

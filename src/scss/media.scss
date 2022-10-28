@@ -1,5 +1,98 @@
 // Здесь находятся все медиазапросы, вынесены в отдельный файл для удобства
 
+@media (max-width: 1200px) {
+  .categories {
+    &__title-wrapper {
+      margin: 0 auto;
+      display: block;
+    }
+  }
+
+  .tovar {
+    &__inner {
+      flex-direction: column;
+    }
+    &__slider {
+      margin-right: 0;
+      margin-bottom: 36px;
+    }
+    &__info {
+    }
+    &__swiper {
+      margin: 0;
+      margin-bottom: 30px;
+    }
+    &__swiper-slide {
+      max-height: 450px;
+      height: 100%;
+    }
+    &__swiper-slide-inner {
+      max-height: 100%;
+      height: 100%;
+    }
+    &__swiper-slide-img-wrapper {
+      max-height: 100%;
+      max-width: 100%;
+      max-height: 450px;
+      width: auto;
+      height: 100%;
+      width: 450px;
+      height: auto;
+      margin: 0 auto;
+    }
+    &__swiper-slide-img {
+      max-width: 100%;
+      width: auto;
+      max-height: 100%;
+      max-height: 450px;
+      height: 100%;
+      width: 450px;
+      height: auto;
+    }
+    &__link-btn {
+      margin-bottom: 22px;
+    }
+    &__price-text {
+      margin-bottom: 37px;
+    }
+    &__order-btns-wrapper {
+      align-items: center;
+      margin-bottom: 50px;
+    }
+    &__swiper-button-next,
+    &__swiper-button-prev {
+      display: block;
+      //   color: #fff;
+      //   width: 20px;
+      //   height: 35px;
+      //   &::after {
+      //     content: url("../images/icons/arrow-left-white.svg");
+      //   }
+      // }
+      // &__swiper-button-next {
+      //   &::after {
+      //     content: url("../images/icons/arrow-right-white.svg");
+      //   }
+      // }
+    }
+
+    .tovar-mini {
+      &__swiper {
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        max-width: 340px;
+      }
+      &__swiper-wrapper {
+      }
+      &__swiper-slide-inner {
+        width: 64px;
+        height: 64px;
+      }
+    }
+  }
+}
 @media (max-width: 1000px) {
   .header {
     &__menu {
@@ -45,7 +138,7 @@
     }
 
     &__link {
-      font-size: 30px;
+      @include adaptive-value("font-size", 30, 25, 1);
       font-weight: 700;
       &::after {
         bottom: -27px;
@@ -231,7 +324,6 @@
     }
   }
 }
-
 
 @media (min-width: 700px) {
   .delivery,
