@@ -244,6 +244,48 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
+  const categoriesSwiper = new Swiper('.categories__swiper', {
+    // Свои классы
+    wrapperClass: 'categories__swiper-wrapper',
+    slideClass: 'categories__swiper-slide',
+
+    // Количество слайдов для показа
+    slidesPerView: 1,
+
+    navigation: {
+      nextEl: '.categories__swiper-button-next',
+      prevEl: '.categories__swiper-button-prev',
+    },
+
+    spaceBetween: 30,
+
+    // Управление клавиатурой
+    keyboard: {
+      // Включить\выключить
+      enabled: true,
+      // Включить\выключить только когда слайдер в пределах вьюпорта
+      onlyInViewport: true,
+      // Включить\выключить управление клавишами pageUp, pageDown
+      pageUpDown: true,
+    },
+
+    breakpoints: {
+      500: {
+        slidesPerView: 2,
+      },
+      750: {
+        slidesPerView: 3,
+      },
+      1000: {
+        slidesPerView: 4,
+      },
+    },
+
+    // Скорость
+    speed: 800,
+    grabCursor: true,
+  });
+
   video();
   link();
   burger();
