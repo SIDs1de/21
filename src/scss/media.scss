@@ -6,6 +6,11 @@
       margin: 0 auto;
       display: block;
     }
+    .container {
+      max-width: 100%;
+      padding: 0;
+      margin: 0;
+    }
   }
 
   .tovar {
@@ -340,6 +345,29 @@
   .kontakty {
     &__catalog-link {
       display: none;
+    }
+  }
+}
+
+@media (max-width: 452px) {
+  .tovar {
+    &__swiper-button-next,
+    &__swiper-button-prev {
+      left: 5px;
+      display: block;
+      color: #fff;
+      width: 20px;
+      height: 35px;
+      &::after {
+        content: url("../images/icons/arrow-left-white.svg");
+      }
+    }
+    &__swiper-button-next {
+      right: 5px;
+      left: auto;
+      &::after {
+        content: url("../images/icons/arrow-right-white.svg");
+      }
     }
   }
 }

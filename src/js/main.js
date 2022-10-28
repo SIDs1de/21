@@ -172,6 +172,8 @@ document.addEventListener('DOMContentLoaded', () => {
       },
     },
 
+    grabCursor: true,
+
     thumbs: {
       swiper: {
         el: '.tovar-mini__swiper',
@@ -197,6 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         breakpoints: {
           1200: {
+            spaceBetween: 10,
             direction: 'vertical',
           },
         },
@@ -205,7 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   const copyLink = (e) => {
-    let link = e.target.dataset.link;
+    let link = document.location.href;
     let tmp = document.createElement('INPUT');
     tmp.value = link;
     document.body.appendChild(tmp);
@@ -288,11 +291,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const chat = () => {
     const chatBtn = document.querySelector('.chat_btn');
-    const chatSoc = document.querySelector('.chat_soc');
 
-    chatBtn.addEventListener('click', () => {
-      chatSoc.classList.toggle('active');
-    });
+    if (chatBtn) {
+      const chatSoc = document.querySelector('.chat_soc');
+
+      chatBtn.addEventListener('click', () => {
+        chatSoc.classList.toggle('active');
+      });
+    }
   };
 
   chat();

@@ -735,11 +735,11 @@ body .main {
   margin: -15px -8px;
 }
 .categories__item {
-  border: 1px solid #ddd;
-  border-radius: 10px;
   margin: 15px 8px;
 }
 .categories__item-inner {
+  border: 1px solid #ddd;
+  border-radius: 10px;
   padding: 25px 25px 35px;
   height: 100%;
   display: -webkit-box;
@@ -799,7 +799,7 @@ body .main {
   overflow: visible;
 }
 .categories__swiper-button-prev {
-  left: -30px;
+  left: 0px;
 }
 .categories__swiper-button-prev::after {
   content: "";
@@ -814,7 +814,7 @@ body .main {
   background: url("../images/icons/arrow-left-grey.svg") center/contain no-repeat;
 }
 .categories__swiper-button-next {
-  right: -30px;
+  right: 0px;
 }
 .categories__swiper-button-next::after {
   content: "";
@@ -1127,7 +1127,10 @@ body .main {
 }
 
 .reviews {
+  margin: 0 auto;
   margin-bottom: 40px;
+  max-width: 1240px;
+  padding: 0 30px;
 }
 .reviews__title {
   font-size: 22px;
@@ -1204,6 +1207,9 @@ body .main {
   margin-bottom: 13px;
 }
 .categories__subtitle {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 30px;
   font-size: 22px;
   font-weight: 700;
   margin-bottom: 31px;
@@ -1227,6 +1233,9 @@ body .main {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 50%;
           flex: 0 0 50%;
+  max-width: 1240px;
+  margin: 0;
+  padding: 0 30px;
 }
 .tovar__title {
   font-size: 30px;
@@ -1435,6 +1444,7 @@ body .main {
   -o-transition: border 0.2s;
   transition: border 0.2s;
   border-radius: 5px;
+  cursor: pointer;
 }
 .tovar-mini__swiper-slide.swiper-slide-thumb-active {
   border: 2px solid #ffd24d;
@@ -1601,6 +1611,11 @@ body .main {
   .categories__title-wrapper {
     margin: 0 auto;
     display: block;
+  }
+  .categories .container {
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
   }
   .tovar__inner {
     -webkit-box-orient: vertical;
@@ -1962,5 +1977,24 @@ body .main {
   .delivery__catalog-link,
 .kontakty__catalog-link {
     display: none;
+  }
+}
+@media (max-width: 452px) {
+  .tovar__swiper-button-next, .tovar__swiper-button-prev {
+    left: 5px;
+    display: block;
+    color: #fff;
+    width: 20px;
+    height: 35px;
+  }
+  .tovar__swiper-button-next::after, .tovar__swiper-button-prev::after {
+    content: url("../images/icons/arrow-left-white.svg");
+  }
+  .tovar__swiper-button-next {
+    right: 5px;
+    left: auto;
+  }
+  .tovar__swiper-button-next::after {
+    content: url("../images/icons/arrow-right-white.svg");
   }
 }

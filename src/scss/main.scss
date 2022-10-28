@@ -291,11 +291,11 @@ body {
     margin: -15px -8px;
   }
   &__item {
-    border: 1px solid #ddd;
-    border-radius: 10px;
     margin: 15px 8px;
   }
   &__item-inner {
+    border: 1px solid #ddd;
+    border-radius: 10px;
     padding: 25px 25px 35px;
     height: 100%;
     display: flex;
@@ -348,7 +348,7 @@ body {
     overflow: visible;
   }
   &__swiper-button-prev {
-    left: -30px;
+    left: 0px;
     &::after {
       content: "";
       position: absolute;
@@ -361,7 +361,7 @@ body {
     }
   }
   &__swiper-button-next {
-    right: -30px;
+    right: 0px;
     &::after {
       content: "";
       position: absolute;
@@ -632,7 +632,10 @@ body {
 }
 
 .reviews {
+  margin: 0 auto;
   margin-bottom: 40px;
+  max-width: 1240px;
+  padding: 0 30px;
   &__title {
     font-size: 22px;
     font-weight: 700;
@@ -694,6 +697,9 @@ body {
   }
 
   &__subtitle {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 30px;
     font-size: 22px;
     font-weight: 700;
     margin-bottom: 31px;
@@ -713,6 +719,9 @@ body {
   }
   &__info {
     flex: 0 0 50%;
+    max-width: 1240px;
+    margin: 0;
+    padding: 0 30px;
   }
   &__title {
     @include adaptive-value("font-size", 30, 25, 1);
@@ -860,7 +869,6 @@ body {
   }
   &__swiper-slide-img-wrapper {
     width: 100%;
-    // height: 100%;
     height: auto;
     &--video {
       position: relative;
@@ -905,6 +913,7 @@ body {
     border: 2px solid transparent;
     transition: border 0.2s;
     border-radius: 5px;
+    cursor: pointer;
     &.swiper-slide-thumb-active {
       border: 2px solid #ffd24d;
     }
