@@ -10,22 +10,6 @@
 
   <title>Товар</title>
 
-  <!-- For search engines -->
-  <meta name="description" content="">
-  <meta name="keywords" content="">
-  <meta name="image" content=""> <!-- Preview -->
-
-  <!-- For social networks -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="">
-  <meta property="og:description" content="">
-  <meta property="og:image" content=""> <!-- Preview -->
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:url" content="">
-  <meta property="og:locale" content="ru_ru">
-  <meta property="og:site_name" content="">
-
   <!-- ICONS -->
 
   <!-- Favicon generator https://www.favicon-generator.org/ -->
@@ -44,18 +28,6 @@
   <!-- STYLES -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
   <link href="css/main.css" rel="stylesheet">
-
-  <script>
-    function copyLink(e) {
-      let link = e.target.dataset.link;
-      let tmp = document.createElement('INPUT');
-      tmp.value = link;
-      document.body.appendChild(tmp);
-      tmp.select();
-      document.execCommand('copy');
-      document.body.removeChild(tmp);
-    }
-  </script>
 
 </head>
 
@@ -125,33 +97,94 @@
                   <!-- Additional required wrapper -->
                   <div class="tovar__swiper-wrapper swiper-wrapper">
                     <!-- Slides -->
-                    <div class="tovar__swiper-slide swiper-slide">Slide 1</div>
-                    <div class="tovar__swiper-slide swiper-slide">Slide 2</div>
-                    <div class="tovar__swiper-slide swiper-slide">Slide 3</div>
+
+                    <div class="tovar__swiper-slide swiper-slide">
+                      <div class="tovar__swiper-slide-inner">
+                        <div class="tovar__swiper-slide-img-wrapper">
+                          <img class="tovar__swiper-slide-img" src="images/tovar-01.jpg" alt="Товар">
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="tovar__swiper-slide swiper-slide">
+                      <div class="tovar__swiper-slide-inner">
+                        <div class="tovar__swiper-slide-img-wrapper">
+                          <img class="tovar__swiper-slide-img" src="images/tovar-02.jpg" alt="Товар">
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="tovar__swiper-slide swiper-slide">
+                      <div class="tovar__swiper-slide-inner">
+                        <div class="tovar__swiper-slide-img-wrapper">
+                          <img class="tovar__swiper-slide-img" src="images/tovar-03.jpg" alt="Товар">
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="tovar__swiper-slide swiper-slide">
+                      <div class="tovar__swiper-slide-inner">
+                        <div class="tovar__swiper-slide-img-wrapper tovar__swiper-slide-img-wrapper--video">
+                          <video class="tovar__swiper-slide-img" src="videos/video.mp4" alt="Товар" type="video/mp4"
+                            controls>
+                          </video>
+                        </div>
+                      </div>
+                    </div>
+
                   </div>
-                  <!-- If we need pagination -->
-                  <div class="swiper-pagination"></div>
+
+                  <!-- If we need navigation buttons -->
+                  <div class="tovar__swiper-button-prev swiper-button-prev"></div>
+                  <div class="tovar__swiper-button-next swiper-button-next"></div>
                 </div>
 
 
                 <!-- Slider main container -->
-                <div class="tovar-mini__swiper swiper">
+                <div class="tovar-mini tovar-mini__swiper swiper">
                   <!-- Additional required wrapper -->
                   <div class="tovar-mini__swiper-wrapper swiper-wrapper">
                     <!-- Slides -->
-                    <div class="tovar-mini__swiper-slide swiper-slide">Slide 1</div>
-                    <div class="tovar-mini__swiper-slide swiper-slide">Slide 2</div>
-                    <div class="tovar-mini__swiper-slide swiper-slide">Slide 3</div>
+
+                    <div class="tovar-mini__swiper-slide swiper-slide">
+                      <div class="tovar-mini__swiper-slide-inner">
+                        <div class="tovar-mini__swiper-slide-img-wrapper">
+                          <img class="tovar-mini__swiper-slide-img" src="images/tovar-01.jpg"
+                            alt="маленькая картинка товара">
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="tovar-mini__swiper-slide swiper-slide">
+                      <div class="tovar-mini__swiper-slide-inner">
+                        <div class="tovar-mini__swiper-slide-img-wrapper">
+                          <img class="tovar-mini__swiper-slide-img" src="images/tovar-02.jpg"
+                            alt="маленькая картинка товара">
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="tovar-mini__swiper-slide swiper-slide">
+                      <div class="tovar-mini__swiper-slide-inner">
+                        <div class="tovar-mini__swiper-slide-img-wrapper">
+                          <img class="tovar-mini__swiper-slide-img" src="images/tovar-03.jpg"
+                            alt="маленькая картинка товара">
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="tovar-mini__swiper-slide swiper-slide">
+                      <div class="tovar-mini__swiper-slide-inner">
+                        <div class="tovar-mini__swiper-slide-img-wrapper tovar-mini__swiper-slide-img-wrapper--video">
+                          <video class="tovar-mini__swiper-slide-img" src="videos/video.mp4"
+                            alt="маленькая картинка товара">
+                          </video>
+                        </div>
+                      </div>
+                    </div>
+
                   </div>
-                  <!-- If we need pagination -->
-                  <div class="swiper-mini-pagination"></div>
                 </div>
-
-
-
-
-
-
 
 
               </div>
@@ -160,7 +193,7 @@
                   Набор украшений Леди
                   цвет серый
                 </p>
-                <button class="tovar__link-btn" onclick="copyLink(event)" data-link="testtesttest">
+                <button class="tovar__link-btn" data-link="testtesttest">
                   Копировать ссылку
                 </button>
                 <p class="tovar__par">
@@ -211,7 +244,7 @@
                 Пожалуйста оставьте здесь отзыв о данном товаре, это поможет будущим покупателям при выборе.
               </p>
               <div class="reviews__vk">
-                <!-- !!! -->
+                Комментарии вк
               </div>
             </div>
           </section>
