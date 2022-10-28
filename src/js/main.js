@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     watchOverflow: true,
 
     // Скорость
-    speed: 800,
+    speed: 600,
 
     // Обновить свайпер
     // при изменении родительских
@@ -282,7 +282,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
 
     // Скорость
-    speed: 800,
+    speed: 600,
     grabCursor: true,
   });
 

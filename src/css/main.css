@@ -1459,6 +1459,11 @@ body .main {
 }
 .tovar-mini__swiper-slide-img-wrapper--video {
   position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
 }
 .tovar-mini__swiper-slide-img-wrapper--video::before {
   content: "";
