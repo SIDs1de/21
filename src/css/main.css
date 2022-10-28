@@ -1476,6 +1476,11 @@ body .main {
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   background: url("../images/icons/play.svg") center/contain no-repeat;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
 }
 .tovar-mini__swiper-slide-img {
   max-width: 90%;
@@ -1515,9 +1520,10 @@ body .main {
 .chat_soc {
   visibility: hidden;
   opacity: 0;
-  -webkit-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
+  display: none;
+  -webkit-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  transition: opacity 0.3s;
 }
 
 .chat_btn {
@@ -1545,9 +1551,28 @@ body .main {
 
 .chat_soc.active {
   visibility: visible;
-  opacity: 1;
+  display: block;
+  -webkit-animation: poyav 0.2s forwards;
+          animation: poyav 0.2s forwards;
 }
 
+@-webkit-keyframes poyav {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes poyav {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 *::-webkit-scrollbar {
   width: 14px; /* ширина scrollbar */
 }

@@ -933,6 +933,8 @@ body {
         left: 50%;
         transform: translate(-50%, -50%);
         background: url("../images/icons/play.svg") center/contain no-repeat;
+        user-select: none;
+        pointer-events: none;
       }
     }
   }
@@ -975,9 +977,8 @@ body {
 .chat_soc {
   visibility: hidden;
   opacity: 0;
-  -webkit-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
+  display: none;
+  transition: opacity 0.3s;
 }
 
 .chat_btn {
@@ -1000,7 +1001,17 @@ body {
 
 .chat_soc.active {
   visibility: visible;
-  opacity: 1;
+  display: block;
+  animation: poyav .2s forwards;
+}
+
+@keyframes poyav {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 *::-webkit-scrollbar {
