@@ -941,6 +941,66 @@ body {
   }
 }
 
+.btn {
+  display: inline-block;
+  position: relative;
+  padding: 20px 20px;
+  background: #ffd24d;
+  color: #000;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: Gilroy;
+  border-radius: 30px;
+  cursor: pointer;
+  outline: none;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  background: #e3b838;
+}
+
+.chat_wrap {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 20;
+}
+
+.chat_soc {
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.chat_btn {
+  padding: 13px;
+  user-select: none;
+}
+.btn img {
+  margin-right: 13px;
+  vertical-align: middle;
+}
+.chat_btn img {
+  margin-right: 0 !important;
+}
+
+.chat_soc a {
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.chat_soc.active {
+  visibility: visible;
+  opacity: 1;
+}
+
 *::-webkit-scrollbar {
   width: 14px; /* ширина scrollbar */
 }

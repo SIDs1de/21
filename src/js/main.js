@@ -286,6 +286,16 @@ document.addEventListener('DOMContentLoaded', () => {
     grabCursor: true,
   });
 
+  const chat = () => {
+    const chatBtn = document.querySelector('.chat_btn');
+    const chatSoc = document.querySelector('.chat_soc');
+
+    chatBtn.addEventListener('click', () => {
+      chatSoc.classList.toggle('active');
+    });
+  };
+
+  chat();
   video();
   link();
   burger();
