@@ -1561,7 +1561,21 @@ body .main {
     margin-bottom: 50px;
   }
   .tovar__swiper-button-next, .tovar__swiper-button-prev {
+    left: 5px;
     display: block;
+    color: #fff;
+    width: 20px;
+    height: 35px;
+  }
+  .tovar__swiper-button-next::after, .tovar__swiper-button-prev::after {
+    content: url("../images/icons/arrow-left-grey.svg");
+  }
+  .tovar__swiper-button-next {
+    right: 5px;
+    left: auto;
+  }
+  .tovar__swiper-button-next::after {
+    content: url("../images/icons/arrow-right-grey.svg");
   }
   .tovar .tovar-mini__swiper {
     position: relative;
@@ -1844,6 +1858,9 @@ body .main {
   }
   .categories__catalog {
     margin-left: 0;
+  }
+  .tovar__swiper-slide-img-wrapper--video::before {
+    display: none;
   }
 }
 @media (min-width: 700px) {
