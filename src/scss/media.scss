@@ -353,6 +353,16 @@
   }
 }
 
+@media (max-width: 550px) {
+  .categories {
+    &__item-title {
+      &--tac {
+        text-align: center;
+      }
+    }
+  }
+}
+
 @media (max-width: 452px) {
   .tovar {
     &__swiper-button-next,
