@@ -799,7 +799,7 @@ body .main {
   overflow: visible;
 }
 .categories__swiper-button-prev {
-  left: 0px;
+  left: 12px;
 }
 .categories__swiper-button-prev::after {
   content: "";
@@ -814,7 +814,7 @@ body .main {
   background: url("../images/icons/arrow-left-grey.svg") center/contain no-repeat;
 }
 .categories__swiper-button-next {
-  right: 0px;
+  right: 12px;
 }
 .categories__swiper-button-next::after {
   content: "";
@@ -1671,7 +1671,7 @@ body .main {
     margin-bottom: 50px;
   }
   .tovar__swiper-button-next, .tovar__swiper-button-prev {
-    left: 5px;
+    left: 20px;
     display: block;
     color: #fff;
     width: 20px;
@@ -1681,7 +1681,7 @@ body .main {
     content: url("../images/icons/arrow-left-grey.svg");
   }
   .tovar__swiper-button-next {
-    right: 5px;
+    right: 20px;
     left: auto;
   }
   .tovar__swiper-button-next::after {
@@ -1980,19 +1980,8 @@ body .main {
   }
 }
 @media (max-width: 452px) {
-  .tovar__swiper-button-next, .tovar__swiper-button-prev {
-    left: 5px;
-    display: block;
-    color: #fff;
-    width: 20px;
-    height: 35px;
-  }
   .tovar__swiper-button-next::after, .tovar__swiper-button-prev::after {
     content: url("../images/icons/arrow-left-white.svg");
-  }
-  .tovar__swiper-button-next {
-    right: 5px;
-    left: auto;
   }
   .tovar__swiper-button-next::after {
     content: url("../images/icons/arrow-right-white.svg");

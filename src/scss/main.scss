@@ -348,7 +348,7 @@ body {
     overflow: visible;
   }
   &__swiper-button-prev {
-    left: 0px;
+    left: 12px;
     &::after {
       content: "";
       position: absolute;
@@ -361,7 +361,7 @@ body {
     }
   }
   &__swiper-button-next {
-    right: 0px;
+    right: 12px;
     &::after {
       content: "";
       position: absolute;
