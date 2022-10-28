@@ -231,15 +231,17 @@ document.addEventListener('DOMContentLoaded', () => {
       '.tovar__swiper-slide-img-wrapper--video'
     );
 
-    const video = videoWrapper.querySelector('.tovar__swiper-slide-img');
+    if (videoWrapper) {
+      const video = videoWrapper.querySelector('.tovar__swiper-slide-img');
 
-    video.addEventListener('play', () => {
-      videoWrapper.classList.remove('tovar__swiper-slide-img-wrapper--video');
-    });
+      video.addEventListener('play', () => {
+        videoWrapper.classList.remove('tovar__swiper-slide-img-wrapper--video');
+      });
 
-    video.addEventListener('pause', () => {
-      videoWrapper.classList.add('tovar__swiper-slide-img-wrapper--video');
-    });
+      video.addEventListener('pause', () => {
+        videoWrapper.classList.add('tovar__swiper-slide-img-wrapper--video');
+      });
+    }
   };
 
   video();

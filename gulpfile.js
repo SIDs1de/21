@@ -69,6 +69,7 @@ function build() {
       '!src/js/main.js',
       'src/*.html',
       'src/images/**/*',
+      'src/videos/**/*'
     ],
     { base: 'src' }
   ).pipe(dest('public'));
