@@ -1617,6 +1617,9 @@ body .main {
     padding: 0;
     margin: 0;
   }
+  .categories__title {
+    text-align: center;
+  }
   .tovar__inner {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
